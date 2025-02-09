@@ -10,7 +10,7 @@ const path=require('path')
 
 const app = express()
 
-const PORT=4001
+const PORT=process.env.PORT ||4001
 
 dotEnv.config()
 app.use(cors())
