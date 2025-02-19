@@ -14,7 +14,7 @@ const firmSchema = new mongoose.Schema({
     type: [
       {
         type: String,
-        enum: ['veg', 'non-veg']
+        enum: ['Veg', 'Non-Veg']
       }
     ]
   },
@@ -22,7 +22,7 @@ const firmSchema = new mongoose.Schema({
     type: [
       {
         type: String,
-        enum: ['south-indian', 'north-indian', 'chinese', 'bakery']
+        enum: ['South-Indian', 'North-Indian', 'Chinese', 'Bakery']
       }
     ]
   },
@@ -32,15 +32,14 @@ const firmSchema = new mongoose.Schema({
   image: {
     type: String,
   },
-  vendor: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Vendor'
-    }
-  ],
+  vendor: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Vendor',
+    required: true
+  },
   Products: [
     {
-      type: mongoose.Schema.Types.ObjectId, // Corrected here
+      type: mongoose.Schema.Types.ObjectId,
       ref: 'Product'
     }
   ]
